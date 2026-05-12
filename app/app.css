@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --bg: #f4eee1;
+  --surface: #fffdfa;
+  --surface-soft: #f8f0e2;
+  --text: #18120a;
+  --muted: #5e5240;
+  --line: #d8ccb6;
+  --ink: #1d150b;
+  --gold: #cda349;
+  --gold-strong: #9f7626;
+  --brand: #20170d;
+  --brand-contrast: #fdf7ea;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0c0a08;
+  --surface: #17120e;
+  --surface-soft: #221b15;
+  --text: #f4e8d2;
+  --muted: #c6b89f;
+  --line: #433525;
+  --ink: #050403;
+  --gold: #d8b15d;
+  --gold-strong: #f0ca7a;
+  --brand: #d8b15d;
+  --brand-contrast: #1a1309;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 12% 4%, color-mix(in srgb, var(--gold) 20%, transparent) 0%, transparent 35%),
+    radial-gradient(circle at 95% 0%, color-mix(in srgb, var(--ink) 10%, transparent) 0%, transparent 32%),
+    var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+}
+
+.site-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link,
+.toolbar-button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-link[aria-current="page"] {
+  border-color: var(--gold);
+  color: var(--gold-strong);
+  font-weight: 700;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.page {
+  padding: 1.35rem 0 3rem;
+}
+
+.section-title {
+  margin: 1.2rem 0 0.75rem;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  padding: 1rem;
+}
+
+.faq-list,
+.calendar-list,
+.grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.75rem;
+}
+
+.calendar-date {
+  font-weight: 700;
+  color: var(--gold-strong);
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--text);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+.primary-button {
+  border: 1px solid color-mix(in srgb, var(--gold) 60%, transparent);
+  border-radius: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: var(--brand);
+  color: var(--brand-contrast);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  padding: 1.2rem 0 2rem;
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-row {
+    grid-template-columns: 1fr;
+  }
+}
