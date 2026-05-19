@@ -40,7 +40,7 @@ type GalleryItem = {
 
 export const siteContent = {
   title: {
-    pl: "Przyjęcie po obronie doktoratu",
+    pl: "Przyjęcie po obronie rozprawy doktorskiej",
     en: "Doctoral Defense Celebration",
   },
   nav: [
@@ -52,11 +52,11 @@ export const siteContent = {
   landing: {
     meta: {
       title: {
-        pl: "Zaproszenie na przyjęcie po obronie doktoratu",
+        pl: "Zaproszenie na przyjęcie z okazji obrony rozprawy doktorskiej",
         en: "Invitation to the Doctoral Defense Celebration",
       },
       description: {
-        pl: "Eleganckie przyjęcie z okazji obrony doktoratu - Dworek Białołęka, 27 czerwca 2026.",
+        pl: "Uroczyste przyjęcie z okazji obrony rozprawy doktorskiej - Dworek Białołęka, 27 czerwca 2026.",
         en: "Elegant doctoral defense celebration at Dworek Białołęka on June 27, 2026.",
       },
     },
@@ -66,11 +66,11 @@ export const siteContent = {
         en: "Invitation",
       },
       headline: {
-        pl: "Świętujmy razem obronę doktoratu",
+        pl: "Najpiękniej jest świętowć w gronie osób, które były częścią tej drogi",
         en: "Let us celebrate a doctoral defense together",
       },
       intro: {
-        pl: "Zapraszamy na wieczorne, eleganckie przyjęcie w gronie bliskich znajomych i rodziny.",
+        pl: "Do usunięcia",
         en: "You are invited to an elegant evening reception with close friends and family.",
       },
       dateBadge: {
@@ -78,9 +78,9 @@ export const siteContent = {
         en: "June 27, 2026 | 6:00 PM",
       },
       buttons: {
-        confirm: { pl: "Potwierdzam przybycie", en: "Confirm attendance" },
-        venue: { pl: "Zobacz miejsce", en: "See venue" },
-        directions: { pl: "Jak dojechać", en: "Get directions" },
+        confirm: { pl: "Potwierdzenie przybycia", en: "Confirm attendance" },
+        venue: { pl: "Miejsce przyjęcia", en: "See venue" },
+        directions: { pl: "Wskazówki dojazdowe", en: "Get directions" },
       },
       photoPlaceholder: {
         pl: "Miejsce na zdjęcie doktorantki / dworku",
@@ -89,7 +89,7 @@ export const siteContent = {
     },
     keyInfo: {
       title: {
-        pl: "Najważniejsze informacje",
+        pl: "Szczegóły przyjęcia",
         en: "Key information",
       },
       items: [
@@ -115,7 +115,7 @@ export const siteContent = {
         {
           label: { pl: "Nocleg", en: "Accommodation" },
           value: {
-            pl: "Po przyjęciu czeka opłacony pokój hotelowy",
+            pl: "Po przyjęciu zapewniony jest dla Państwa nocleg (dotyczy gości spoza województwa mazowieckiego",
             en: "A paid hotel room is provided after the reception",
           },
         },
