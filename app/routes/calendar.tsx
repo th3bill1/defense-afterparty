@@ -18,7 +18,7 @@ export default function CalendarPage() {
 
       <div className="calendar-list section-title">
         {siteContent.calendar.items.map((item) => (
-          <article className="panel calendar-row" key={item.date + item.title.en}>
+          <article className="panel calendar-row" key={item.date + item.title.pl}>
             <div className="calendar-date">{item.date}</div>
             <div>
               <h2>{item.title[lang]}</h2>

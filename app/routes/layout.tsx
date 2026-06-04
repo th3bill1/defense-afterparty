@@ -1,9 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { Link, NavLink, Outlet, useOutletContext } from "react-router";
 
 import { type Lang, siteContent } from "../lib/site-content";
-
-type ThemeMode = "light" | "dark";
 
 type LayoutContext = {
   lang: Lang;
@@ -14,36 +12,16 @@ export function useLayoutContext() {
 }
 
 function getInitialLang(): Lang {
-  if (typeof window === "undefined") {
-    return "pl";
-  }
-
-  const savedLang = window.localStorage.getItem("lang");
-  return savedLang === "en" ? "en" : "pl";
+  return "pl";
 }
 
-function getInitialTheme(): ThemeMode {
-  if (typeof window === "undefined") {
-    return "light";
-  }
-
-  const savedTheme = window.localStorage.getItem("theme");
-  return savedTheme === "dark" ? "dark" : "light";
-}
 
 export default function LayoutRoute() {
-  const [lang, setLang] = useState<Lang>(getInitialLang);
-  const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
+  const lang = getInitialLang();
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    window.localStorage.setItem("lang", lang);
   }, [lang]);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    window.localStorage.setItem("theme", theme);
-  }, [theme]);
 
   const pageTitle = useMemo(() => siteContent.title[lang], [lang]);
 
@@ -69,21 +47,6 @@ export default function LayoutRoute() {
           </ul>
 
           <div className="toolbar">
-            <button
-              className="toolbar-button"
-              onClick={() => setLang((current) => (current === "pl" ? "en" : "pl"))}
-              type="button"
-            >
-              {lang === "pl" ? siteContent.controls.language.en : siteContent.controls.language.pl}
-            </button>
-
-            <button
-              className="toolbar-button"
-              onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
-              type="button"
-            >
-              {theme === "dark" ? siteContent.controls.themeLight[lang] : siteContent.controls.themeDark[lang]}
-            </button>
           </div>
         </div>
       </header>

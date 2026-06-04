@@ -18,7 +18,7 @@ export default function FaqPage() {
 
       <div className="faq-list section-title">
         {siteContent.faq.items.map((item) => (
-          <article className="panel" key={item.question.en}>
+          <article className="panel" key={item.question.pl}>
             <h2>{item.question[lang]}</h2>
             <p>{item.answer[lang]}</p>
           </article>

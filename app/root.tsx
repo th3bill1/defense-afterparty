@@ -38,13 +38,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: `
               (function () {
                 try {
-                  var savedTheme = localStorage.getItem("theme");
-                  var theme = (savedTheme === "light" || savedTheme === "dark") ? savedTheme : "light";
-                  document.documentElement.classList.toggle("dark", theme === "dark");
+                  // Always use dark mode
+                  var theme = "dark";
+                  document.documentElement.classList.add("dark");
 
-                  var savedLang = localStorage.getItem("lang");
-                  var lang = (savedLang === "pl" || savedLang === "en") ? savedLang : "pl";
-                  document.documentElement.lang = lang;
+                  // Always use Polish
+                  document.documentElement.lang = "pl";
                 } catch (e) {}
               })();
             `,

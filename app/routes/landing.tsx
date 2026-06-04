@@ -88,7 +88,6 @@ export default function LandingPage() {
         <div className="lp-hero-content">
           <Badge>{content.hero.eyebrow[lang]}</Badge>
           <h1>{content.hero.headline[lang]}</h1>
-          <p>{content.hero.intro[lang]}</p>
           <div className="lp-hero-meta">{content.hero.dateBadge[lang]}</div>
 
           <div className="lp-hero-actions">
@@ -100,6 +99,9 @@ export default function LandingPage() {
             </a>
             <a className="lp-cta" href="#dojazd">
               {content.hero.buttons.directions[lang]}
+            </a>
+            <a className="lp-cta" href="#timeline">
+              {content.hero.buttons.timeline[lang]}
             </a>
           </div>
         </div>
@@ -113,7 +115,7 @@ export default function LandingPage() {
         <h2>{content.keyInfo.title[lang]}</h2>
         <div className="lp-info-grid">
           {content.keyInfo.items.map((item) => (
-            <article className="lp-card" key={item.label.en}>
+            <article className="lp-card" key={item.label.pl}>
               <p className="lp-label">{item.label[lang]}</p>
               <p className="lp-value">{item.value[lang]}</p>
             </article>
@@ -161,7 +163,7 @@ export default function LandingPage() {
 
         <div className="lp-tip-grid">
           {content.travel.tips.map((tip) => (
-            <article className="lp-card" key={tip.title.en}>
+            <article className="lp-card" key={tip.title.pl}>
               <h3>{tip.title[lang]}</h3>
               <p>{tip.text[lang]}</p>
             </article>
@@ -222,7 +224,7 @@ export default function LandingPage() {
         <p className="lp-lead">{content.hotel.lead[lang]}</p>
         <div className="lp-info-grid">
           {content.hotel.details.map((item) => (
-            <article className="lp-card" key={item.label.en}>
+            <article className="lp-card" key={item.label.pl}>
               <p className="lp-label">{item.label[lang]}</p>
               <p className="lp-value">{item.value[lang]}</p>
             </article>
@@ -230,11 +232,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="lp-section" data-reveal>
+      <section className="lp-section" id="timeline" data-reveal>
         <h2>{content.timeline.title[lang]}</h2>
         <div className="lp-timeline">
           {content.timeline.items.map((item) => (
-            <article className="lp-timeline-item" key={`${item.time}-${item.title.en}`}>
+            <article className="lp-timeline-item" key={`${item.time}-${item.title.pl}`}>
               <span className="lp-time">{item.time}</span>
               <span className="lp-dot" aria-hidden="true" />
               <strong>{item.title[lang]}</strong>
@@ -251,7 +253,7 @@ export default function LandingPage() {
             <button
               aria-label={item.title[lang]}
               className="lp-gallery-thumb"
-              key={item.title.en}
+              key={item.title.pl}
               onClick={() => setActivePhoto(index)}
               type="button"
             >
@@ -266,7 +268,7 @@ export default function LandingPage() {
         <h2>{content.faq.title[lang]}</h2>
         <div className="lp-faq-grid">
           {content.faq.items.map((item) => (
-            <article className="lp-card" key={item.question.en}>
+            <article className="lp-card" key={item.question.pl}>
               <h3>{item.question[lang]}</h3>
               <p>{item.answer[lang]}</p>
             </article>
@@ -284,9 +286,9 @@ export default function LandingPage() {
           <p>
             <strong>{content.contact.emailLabel[lang]}:</strong> {content.contact.email[lang]}
           </p>
-          <a className="lp-cta lp-cta-primary" href={`mailto:${content.contact.email.en.replace("[", "").replace("]", "")}`}>
-            {content.contact.cta[lang]}
-          </a>
+          <a className="lp-cta lp-cta-primary" href={`mailto:${content.contact.email.pl.replace("[", "").replace("]", "")}`}>
+              {content.contact.cta[lang]}
+            </a>
         </article>
       </section>
 
