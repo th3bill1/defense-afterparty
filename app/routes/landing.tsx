@@ -128,14 +128,6 @@ export default function LandingPage() {
         <p className="lp-lead">{content.venue.lead[lang]}</p>
 
         <img alt="Dworek Białołęka - widok z zewnątrz" className="lp-venue-image" src={content.venue.imageSrc} />
-
-        <div className="lp-badges">
-          {content.venue.features[lang].map((feature) => (
-            <Badge key={feature} variant="outline">
-              {feature}
-            </Badge>
-          ))}
-        </div>
       </section>
 
       <section className="lp-section" id="dojazd" data-reveal>
@@ -153,7 +145,7 @@ export default function LandingPage() {
         </div>
 
         <Button
-          className="lp-maps-button"
+          className="lp-maps-button hover:cursor-pointer"
           onClick={() => window.open(content.travel.mapsUrl, "_blank", "noopener,noreferrer")}
           type="button"
           variant="outline"
@@ -173,7 +165,6 @@ export default function LandingPage() {
 
       <section className="lp-section" id="rsvp" data-reveal>
         <h2>{content.rsvp.title[lang]}</h2>
-        <p className="lp-lead">{content.rsvp.lead[lang]}</p>
         <article className="lp-deadline">{content.rsvp.deadline[lang]}</article>
 
         <form className="lp-form" onSubmit={(event) => event.preventDefault()}>
@@ -283,12 +274,6 @@ export default function LandingPage() {
           <p>
             <strong>{content.contact.phoneLabel[lang]}:</strong> {content.contact.phone[lang]}
           </p>
-          <p>
-            <strong>{content.contact.emailLabel[lang]}:</strong> {content.contact.email[lang]}
-          </p>
-          <a className="lp-cta lp-cta-primary" href={`mailto:${content.contact.email.pl.replace("[", "").replace("]", "")}`}>
-              {content.contact.cta[lang]}
-            </a>
         </article>
       </section>
 

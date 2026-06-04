@@ -94,7 +94,7 @@ export const siteContent = {
           value: { pl: "18:00" },
         },
         {
-          label: { pl: "Miejsce" },
+          label: { pl: "Miejsce przyjęcia" },
           value: { pl: "Dworek Białołęka" },
         },
         {
@@ -106,8 +106,12 @@ export const siteContent = {
         {
           label: { pl: "Nocleg" },
           value: {
-            pl: "Po przyjęciu zapewniony jest dla Państwa nocleg (dotyczy gości spoza województwa mazowieckiego",
+            pl: "Nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego",
           },
+        },
+        {
+          label: { pl: "Miejsce noclegu" },
+          value: { pl: "Dworek Białołęka" },
         },
       ] satisfies DetailItem[],
     },
@@ -116,10 +120,7 @@ export const siteContent = {
         pl: "Miejsce wydarzenia - Dworek Białołęka",
       },
       lead: {
-        pl: "Kameralny, elegancki dworek bankietowy na Zielonej Białołęce, idealny na uroczyste spotkanie.",
-      },
-      features: {
-        pl: ["elegancka sala", "zielona okolica", "Warszawa - Białołęka", "nocleg dla gości"],
+        pl: "Kameralny, elegancki dworek bankietowy na Zielonej Białołęce.",
       },
       imageSrc: "/dworek-z-zewnatrz.jpg",
     },
@@ -153,13 +154,13 @@ export const siteContent = {
         {
           title: { pl: "Komunikacja miejska" },
           text: {
-            pl: "[Placeholder: linie autobusowe i przystanek docelowy].",
+            pl: "Przystanek Przydrożna 51, linie autobusowe 204, 234, 314, N-14.",
           },
         },
         {
           title: { pl: "Parking" },
           text: {
-            pl: "[Placeholder: informacje o parkingu przy obiekcie].",
+            pl: "Parking jest dostępny na terenie obiektu.",
           },
         },
       ] satisfies TravelTip[],
@@ -168,11 +169,8 @@ export const siteContent = {
       title: {
         pl: "RSVP",
       },
-      lead: {
-        pl: "Daj nam znać, czy będziesz świętować razem z nami.",
-      },
       deadline: {
-        pl: "Prosimy o potwierdzenie przybycia do dnia 31 maja 2026 r.",
+        pl: "Prosimy o potwierdzenie przybycia do dnia 14 czerwca 2026 r.",
       },
       fields: {
         fullName: { pl: "Imię i nazwisko" },
@@ -331,12 +329,11 @@ export const siteContent = {
     contact: {
       title: { pl: "Kontakt" },
       lead: {
-        pl: "W razie pytań skontaktuj się z organizatorem.",
+        pl: "W razie pytań skontaktuj się ze mną.",
       },
       phoneLabel: { pl: "Telefon" },
       emailLabel: { pl: "E-mail" },
-      phone: { pl: "[+48 ...]" },
-      email: { pl: "[kontakt@twojadomena.pl]" },
+      phone: { pl: "+48 884 375 483" },
       cta: { pl: "Skontaktuj się" },
     },
   },
@@ -374,7 +371,7 @@ export const siteContent = {
       pl: "Jeśli masz pytania, napisz do organizatora.",
     },
     direct: {
-      pl: "Email: [kontakt@twojadomena.pl] | Telefon: [+48 ...]",
+      pl: "Telefon: +48 884 375 483",
     },
     formLabels: {
       name: { pl: "Imię" },
