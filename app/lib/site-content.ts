@@ -123,14 +123,14 @@ export const siteContent = {
     },
     rsvp: {
       title: "RSVP",
-      deadline: "Prosimy o potwierdzenie przybycia do dnia 14 czerwca 2026 r.",
+      deadline: "Proszę o potwierdzenie przybycia do dnia 14 czerwca 2026 r.",
       fields: {
         fullName: "Imię i nazwisko",
         attendance: "Obecność",
         guestCount: "Liczba osób",
-        stay: "Korzystanie z noclegu",
+        stay: "Nocleg",
         diet: "Preferencje żywieniowe",
-        message: "Wiadomość dla organizatorów",
+        message: "Wiadomość dla organizatorki",
         submit: "Wyślij potwierdzenie",
       },
       options: {

@@ -1,5 +1,4 @@
 import { siteContent } from "../lib/site-content";
-import { useLayoutContext } from "./layout";
 
 export function meta() {
   return [
@@ -9,36 +8,35 @@ export function meta() {
 }
 
 export default function ContactPage() {
-  const { lang } = useLayoutContext();
   const labels = siteContent.contact.formLabels;
 
   return (
     <section>
-      <h1>{siteContent.contact.title[lang]}</h1>
-      <p>{siteContent.contact.intro[lang]}</p>
+      <h1>{siteContent.contact.title}</h1>
+      <p>{siteContent.contact.intro}</p>
 
       <article className="panel section-title">
-        <strong>{siteContent.contact.direct[lang]}</strong>
+        <strong>{siteContent.contact.direct}</strong>
       </article>
 
       <form className="contact-form section-title" onSubmit={(event) => event.preventDefault()}>
         <label>
-          {labels.name[lang]}
-          <input placeholder={labels.name[lang]} type="text" />
+          {labels.name}
+          <input placeholder={labels.name} type="text" />
         </label>
 
         <label>
-          {labels.email[lang]}
-          <input placeholder={labels.email[lang]} type="email" />
+          {labels.email}
+          <input placeholder={labels.email} type="email" />
         </label>
 
         <label>
-          {labels.message[lang]}
-          <textarea placeholder={labels.message[lang]} rows={5} />
+          {labels.message}
+          <textarea placeholder={labels.message} rows={5} />
         </label>
 
         <button className="primary-button" type="submit">
-          {labels.send[lang]}
+          {labels.send}
         </button>
       </form>
     </section>
