@@ -1,5 +1,4 @@
 import { siteContent } from "../lib/site-content";
-import { useLayoutContext } from "./layout";
 
 export function meta() {
   return [
@@ -9,20 +8,19 @@ export function meta() {
 }
 
 export default function CalendarPage() {
-  const { lang } = useLayoutContext();
 
   return (
     <section>
-      <h1>{siteContent.calendar.title[lang]}</h1>
-      <p>{siteContent.calendar.intro[lang]}</p>
+      <h1>{siteContent.calendar.title}</h1>
+      <p>{siteContent.calendar.intro}</p>
 
       <div className="calendar-list section-title">
         {siteContent.calendar.items.map((item) => (
-          <article className="panel calendar-row" key={item.date + item.title.pl}>
+          <article className="panel calendar-row" key={item.date + item.title}>
             <div className="calendar-date">{item.date}</div>
             <div>
-              <h2>{item.title[lang]}</h2>
-              <p>{item.note[lang]}</p>
+              <h2>{item.title}</h2>
+              <p>{item.note}</p>
             </div>
           </article>
         ))}

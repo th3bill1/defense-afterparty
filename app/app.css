@@ -1,21 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --bg: #f4eee1;
-  --surface: #fffdfa;
-  --surface-soft: #f8f0e2;
-  --text: #18120a;
-  --muted: #5e5240;
-  --line: #d8ccb6;
-  --ink: #1d150b;
-  --gold: #cda349;
-  --gold-strong: #9f7626;
-  --brand: #20170d;
-  --brand-contrast: #fdf7ea;
-}
-
-.dark {
   color-scheme: dark;
   --bg: #0c0a08;
   --surface: #17120e;

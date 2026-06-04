@@ -11,9 +11,6 @@ This project is a starter template for an event information + invitation website
 
 ## Features
 
-- Polish and English language switch
-- Polish is the default language
-- Light and dark theme switch
 - Placeholder text ready to replace
 
 ## Run locally

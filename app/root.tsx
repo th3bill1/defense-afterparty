@@ -32,23 +32,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  // Always use dark mode
-                  var theme = "dark";
-                  document.documentElement.classList.add("dark");
-
-                  // Always use Polish
-                  document.documentElement.lang = "pl";
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
       </head>
       <body>
         {children}

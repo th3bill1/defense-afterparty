@@ -1,5 +1,4 @@
 import { siteContent } from "../lib/site-content";
-import { useLayoutContext } from "./layout";
 
 export function meta() {
   return [
@@ -8,19 +7,18 @@ export function meta() {
   ];
 }
 
-export default function FaqPage() {
-  const { lang } = useLayoutContext();
+export default function FaqPage() {;
 
   return (
     <section>
-      <h1>{siteContent.faq.title[lang]}</h1>
-      <p>{siteContent.faq.lead[lang]}</p>
+      <h1>{siteContent.faq.title}</h1>
+      <p>{siteContent.faq.lead}</p>
 
       <div className="faq-list section-title">
         {siteContent.faq.items.map((item) => (
-          <article className="panel" key={item.question.pl}>
-            <h2>{item.question[lang]}</h2>
-            <p>{item.answer[lang]}</p>
+          <article className="panel" key={item.question}>
+            <h2>{item.question}</h2>
+            <p>{item.answer}</p>
           </article>
         ))}
       </div>

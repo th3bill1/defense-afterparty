@@ -1,36 +1,16 @@
 import { useEffect, useMemo } from "react";
 import { Link, NavLink, Outlet, useOutletContext } from "react-router";
 
-import { type Lang, siteContent } from "../lib/site-content";
-
-type LayoutContext = {
-  lang: Lang;
-};
-
-export function useLayoutContext() {
-  return useOutletContext<LayoutContext>();
-}
-
-function getInitialLang(): Lang {
-  return "pl";
-}
-
+import { siteContent } from "../lib/site-content";
 
 export default function LayoutRoute() {
-  const lang = getInitialLang();
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
-  const pageTitle = useMemo(() => siteContent.title[lang], [lang]);
 
   return (
     <div className="shell">
       <header className="site-header">
         <div className="container header-inner">
           <Link className="site-name" to="/">
-            {pageTitle}
+            {siteContent.title}
           </Link>
 
           <ul className="nav-list" aria-label="Main navigation">
@@ -40,7 +20,7 @@ export default function LayoutRoute() {
                   className="nav-link"
                   to={item.to}
                 >
-                  {item.label[lang]}
+                  {item.label}
                 </NavLink>
               </li>
             ))}
@@ -53,12 +33,12 @@ export default function LayoutRoute() {
 
       <main className="page">
         <div className="container">
-          <Outlet context={{ lang }} />
+          <Outlet />
         </div>
       </main>
 
       <footer className="site-footer">
-        <div className="container">{siteContent.footer[lang]}</div>
+        <div className="container">{siteContent.footer}</div>
       </footer>
     </div>
   );
