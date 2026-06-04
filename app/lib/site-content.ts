@@ -212,20 +212,16 @@ export const siteContent = {
       details: [
         {
           label: { pl: "Zameldowanie" },
-          value: { pl: "[Placeholder: godzina zameldowania]" },
+          value: { pl: "Od 14:00" },
         },
         {
           label: { pl: "Wymeldowanie" },
-          value: { pl: "[Placeholder: godzina wymeldowania]" },
+          value: { pl: "Do 10:00" },
         },
         {
           label: { pl: "Śniadanie" },
-          value: { pl: "[Placeholder: informacje o śniadaniu]" },
-        },
-        {
-          label: { pl: "Liczba osób w pokoju" },
-          value: { pl: "[Placeholder: liczba osób]" },
-        },
+          value: { pl: "9:00 - 12:00, Skarbka z Gór 23A/23" },
+        }
       ] satisfies DetailItem[],
     },
     timeline: {
@@ -237,8 +233,11 @@ export const siteContent = {
         { time: "18:15", title: { pl: "Aperitif" } },
         { time: "18:30", title: { pl: "Obiad" } },
         { time: "19:30", title: { pl: "Wspólne świętowanie" } },
+        { time: "21:00", title: { pl: "Niespodzianka dla gości" } },
         { time: "22:00", title: { pl: "Ciepły posiłek" } },
+        { time: "23:00", title: { pl: "Niespodzianka dla gości" } },
         { time: "01:00", title: { pl: "Ciepły posiłek" } },
+        { time: "04:00", title: { pl: "Zakończenie przyjęcia" } },
       ] satisfies TimelineItem[],
     },
     gallery: {
@@ -282,7 +281,7 @@ export const siteContent = {
             pl: "Do kiedy potwierdzić obecność?",
           },
           answer: {
-            pl: "Prosimy o RSVP do 31 maja 2026 r.",
+            pl: "Prosimy o RSVP do 14 czerwca 2026 r.",
           },
         },
         {
@@ -290,7 +289,7 @@ export const siteContent = {
             pl: "Czy nocleg jest zapewniony?",
           },
           answer: {
-            pl: "Tak, po przyjęciu dla gości przewidziany jest opłacony pokój hotelowy.",
+            pl: "Tak, po przyjęciu dla gości spoza województwa mazowieckiego jest opłacony pokój hotelowy.",
           },
         },
         {
@@ -306,7 +305,7 @@ export const siteContent = {
             pl: "Gdzie zaparkować?",
           },
           answer: {
-            pl: "[Placeholder: szczegóły parkingu przy obiekcie].",
+            pl: "Na terenie dworku.",
           },
         },
         {
@@ -322,7 +321,7 @@ export const siteContent = {
             pl: "Jaki jest dress code?",
           },
           answer: {
-            pl: "[Placeholder: smart casual / wieczorowy].",
+            pl: "Smart casual.",
           },
         },
       ] satisfies FaqItem[],

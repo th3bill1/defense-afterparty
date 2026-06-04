@@ -19,15 +19,6 @@ export default function LandingPage() {
 
   const content = siteContent.landing;
 
-  const galleryCount = content.gallery.items.length;
-  const shownPhoto = useMemo(() => {
-    if (activePhoto === null) {
-      return null;
-    }
-
-    return content.gallery.items[activePhoto];
-  }, [activePhoto, content.gallery.items]);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,41 +37,6 @@ export default function LandingPage() {
 
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (activePhoto === null) {
-      return;
-    }
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActivePhoto(null);
-      }
-
-      if (event.key === "ArrowLeft") {
-        setActivePhoto((current) => {
-          if (current === null) {
-            return 0;
-          }
-
-          return (current - 1 + galleryCount) % galleryCount;
-        });
-      }
-
-      if (event.key === "ArrowRight") {
-        setActivePhoto((current) => {
-          if (current === null) {
-            return 0;
-          }
-
-          return (current + 1) % galleryCount;
-        });
-      }
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [activePhoto, galleryCount]);
 
   return (
     <>
@@ -237,25 +193,6 @@ export default function LandingPage() {
       </section>
 
       <section className="lp-section" data-reveal>
-        <h2>{content.gallery.title[lang]}</h2>
-        <p className="lp-lead">{content.gallery.lead[lang]}</p>
-        <div className="lp-gallery-grid">
-          {content.gallery.items.map((item, index) => (
-            <button
-              aria-label={item.title[lang]}
-              className="lp-gallery-thumb"
-              key={item.title.pl}
-              onClick={() => setActivePhoto(index)}
-              type="button"
-            >
-              <strong>{item.title[lang]}</strong>
-              <span>{item.caption[lang]}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <section className="lp-section" data-reveal>
         <h2>{content.faq.title[lang]}</h2>
         <div className="lp-faq-grid">
           {content.faq.items.map((item) => (
@@ -277,53 +214,7 @@ export default function LandingPage() {
         </article>
       </section>
 
-      {shownPhoto ? (
-        <div className="lp-lightbox" onClick={() => setActivePhoto(null)} role="presentation">
-          <div className="lp-lightbox-content" onClick={(event) => event.stopPropagation()} role="dialog" aria-modal="true">
-            <header>
-              <h3>{shownPhoto.title[lang]}</h3>
-              <button onClick={() => setActivePhoto(null)} type="button">
-                {content.gallery.controls.close[lang]}
-              </button>
-            </header>
-            <div className="lp-lightbox-photo" role="img" aria-label={shownPhoto.caption[lang]}>
-              {shownPhoto.caption[lang]}
-            </div>
-            <footer>
-              <Button
-                onClick={() =>
-                  setActivePhoto((current) => {
-                    if (current === null) {
-                      return 0;
-                    }
-
-                    return (current - 1 + galleryCount) % galleryCount;
-                  })
-                }
-                type="button"
-                variant="outline"
-              >
-                {content.gallery.controls.previous[lang]}
-              </Button>
-              <Button
-                onClick={() =>
-                  setActivePhoto((current) => {
-                    if (current === null) {
-                      return 0;
-                    }
-
-                    return (current + 1) % galleryCount;
-                  })
-                }
-                type="button"
-                variant="outline"
-              >
-                {content.gallery.controls.next[lang]}
-              </Button>
-            </footer>
-          </div>
-        </div>
-      ) : null}
+      
     </>
   );
 }
