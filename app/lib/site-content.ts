@@ -233,11 +233,12 @@ export const siteContent = {
         pl: "Harmonogram",
       },
       items: [
-        { time: "17:30", title: { pl: "Przyjazd gości" } },
-        { time: "18:00", title: { pl: "Powitanie" } },
-        { time: "19:00", title: { pl: "Kolacja" } },
-        { time: "20:30", title: { pl: "Toast" } },
-        { time: "21:00", title: { pl: "Wspólne świętowanie" } },
+        { time: "18:00", title: { pl: "Rozpoczęcie przyjęcia" } },
+        { time: "18:15", title: { pl: "Aperitif" } },
+        { time: "18:30", title: { pl: "Obiad" } },
+        { time: "19:30", title: { pl: "Wspólne świętowanie" } },
+        { time: "22:00", title: { pl: "Ciepły posiłek" } },
+        { time: "01:00", title: { pl: "Ciepły posiłek" } },
       ] satisfies TimelineItem[],
     },
     gallery: {
