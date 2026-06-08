@@ -111,6 +111,10 @@ a {
   background: color-mix(in srgb, var(--surface) 86%, transparent);
 }
 
+.site-header {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
 .container {
   width: min(1100px, 92vw);
   margin: 0 auto;
@@ -255,6 +259,14 @@ a {
 }
 
 @media (max-width: 760px) {
+  .site-header {
+    box-shadow: 0 10px 30px color-mix(in srgb, black 12%, transparent);
+  }
+
+  .site-header--hidden {
+    transform: translateY(-100%);
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
