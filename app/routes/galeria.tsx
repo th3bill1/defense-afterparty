@@ -69,7 +69,7 @@ export function meta() {
   const content = siteContent.landing.gallery;
 
   return [
-    { title: `${content.title} | ${siteContent.title}` },
+    { title: `${content.title}` },
     { name: "description", content: content.description },
   ];
 }
