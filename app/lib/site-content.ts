@@ -254,7 +254,7 @@ export const siteContent = {
         },
         {
           question: "Jakiego upominku oczekuje organizatorka?",
-          answer: "W dalszą drogę najlłatwiej zabrać to, co zmieści się w kopercie.",
+          answer: "W dalszą drogę najłatwiej zabrać to, co zmieści się w kopercie.",
         },
         {
           question: "Mam specjalne wymagania żywieniowe, co zrobić?",
