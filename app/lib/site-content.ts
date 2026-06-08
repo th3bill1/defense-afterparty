@@ -148,7 +148,7 @@ export const siteContent = {
     },
     hotel: {
       title: "Nocleg",
-      lead: "Po przyjęciu zapewniamy gościom opłacony pokój hotelowy. Nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
+      lead: "Po przyjęciu zapewniam gościom opłacony pokój hotelowy. Nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
       details: [
         {
           label: "Zameldowanie",
