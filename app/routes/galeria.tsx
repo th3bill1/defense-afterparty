@@ -20,16 +20,14 @@ type DriveListResponse = {
 const googleDriveApiKey = "AIzaSyC8fcIq4rpXbBEZIwozDH--21oWPMUCh0M";
 const googleDriveFolderId = "12IbtyNab0Dsy-wGsxUTfVKPp_lpi1nJA";
 
-function buildImageSrc(file: DriveFile) {
-  return (
-    file.thumbnailLink ??
-    file.webContentLink ??
-    `https://drive.google.com/uc?export=view&id=${file.id}`
-  );
-}
-
-function buildFileUrl(file: DriveFile) {
-  return file.webViewLink ?? `https://drive.google.com/file/d/${file.id}/view`;
+function getImageSources(file: DriveFile, size = 1200) {
+  return [
+    `https://lh3.googleusercontent.com/d/${file.id}=s${size}`,
+    `https://drive.google.com/thumbnail?id=${file.id}&sz=w${size}`,
+    file.thumbnailLink,
+    `https://drive.google.com/uc?export=view&id=${file.id}`,
+    file.webContentLink,
+  ].filter(Boolean) as string[];
 }
 
 async function loadDriveImages(signal: AbortSignal) {
@@ -68,26 +66,85 @@ async function loadDriveImages(signal: AbortSignal) {
 }
 
 export function meta() {
+  const content = siteContent.landing.gallery;
+
   return [
-    { title: `Galeria | ${siteContent.title}` },
-    {
-      name: "description",
-      content: "Galeria zdjęć pobierana z Google Drive.",
-    },
+    { title: `${content.title} | ${siteContent.title}` },
+    { name: "description", content: content.description },
   ];
 }
 
+function DriveImage({
+  file,
+  className,
+  size = 1200,
+  loading = "lazy",
+}: {
+  file: DriveFile;
+  className: string;
+  size?: number;
+  loading?: "lazy" | "eager";
+}) {
+  const sources = getImageSources(file, size);
+  const [sourceIndex, setSourceIndex] = useState(0);
+
+  return (
+    <img
+      alt=""
+      className={className}
+      decoding="async"
+      loading={loading}
+      referrerPolicy="no-referrer"
+      src={sources[sourceIndex]}
+      onError={() => {
+        setSourceIndex((current) => {
+          const next = current + 1;
+          return next < sources.length ? next : current;
+        });
+      }}
+    />
+  );
+}
+
+function shuffleArray<T>(array: T[]) {
+  return [...array].sort(() => Math.random() - 0.5);
+}
+
 export default function GaleriaRoute() {
+  const content = siteContent.landing.gallery;
   const [images, setImages] = useState<DriveFile[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const openImage = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  const closeImage = () => {
+    setActiveIndex(null);
+  };
+
+  const showPrevious = () => {
+    setActiveIndex((current) => {
+      if (current === null) return null;
+      return current === 0 ? images.length - 1 : current - 1;
+    });
+  };
+
+  const showNext = () => {
+    setActiveIndex((current) => {
+      if (current === null) return null;
+      return current === images.length - 1 ? 0 : current + 1;
+    });
+  };
 
   useEffect(() => {
     const controller = new AbortController();
 
     async function run() {
       if (!googleDriveApiKey || !googleDriveFolderId) {
-        setError("Uzupełnij VITE_GOOGLE_DRIVE_API_KEY oraz VITE_GOOGLE_DRIVE_FOLDER_ID.");
+        setError("Uzupełnij konfigurację Google Drive.");
         setLoading(false);
         return;
       }
@@ -95,8 +152,9 @@ export default function GaleriaRoute() {
       try {
         setLoading(true);
         setError(null);
+
         const driveImages = await loadDriveImages(controller.signal);
-        setImages(driveImages);
+        setImages(shuffleArray(driveImages));
       } catch (fetchError) {
         if (controller.signal.aborted) {
           return;
@@ -115,60 +173,118 @@ export default function GaleriaRoute() {
     return () => controller.abort();
   }, []);
 
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPrevious();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNext();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeIndex, images.length]);
+
   return (
     <main className="gallery-page">
-      <section className="gallery-hero panel">
-        <div>
-          <p className="gallery-kicker">Galeria</p>
-          <h1>Zdjęcia z Google Drive</h1>
-          <p className="gallery-lead">
-            Dodaj zdjęcia do dysku!
-          </p>
-        </div>
-
-        <div className="gallery-meta">
-          <div>
-            <span className="gallery-meta-label">Folder</span>
-            <strong>{googleDriveFolderId ? "Podłączony" : "Brak konfiguracji"}</strong>
-          </div>
-          <div>
-            <span className="gallery-meta-label">Zdjęcia</span>
-            <strong>{images.length}</strong>
-          </div>
-        </div>
+      <section className="gallery-header lp-section">
+        <h1>{content.title}</h1>
+        <p className="lp-lead">
+          {content.lead} Wystarczy dodać zdjęcia do folderu na{" "}
+          <a className="gallery-link" href={content.folderUrl} target="_blank" rel="noopener noreferrer">
+            Google Drive
+          </a>
+          . Zdjęcia pojawią się automatycznie w galerii na tej stronie.
+        </p>
       </section>
 
       {loading ? (
-        <section className="gallery-state panel">
-          <p className="gallery-state-title">Wczytywanie zdjęć...</p>
-          <p>Jeśli to pierwszy start, galeria pobiera listę plików z Google Drive.</p>
+        <section className="gallery-state lp-section">
+          <p className="gallery-state-title">{content.loading}</p>
         </section>
       ) : error ? (
-        <section className="gallery-state panel">
-          <p className="gallery-state-title">Nie można wyświetlić galerii</p>
+        <section className="gallery-state lp-section">
+          <p className="gallery-state-title">{content.errorTitle}</p>
           <p>{error}</p>
         </section>
       ) : images.length === 0 ? (
-        <section className="gallery-state panel">
-          <p className="gallery-state-title">Brak zdjęć</p>
-          <p>Folder nie zwrócił jeszcze żadnych plików graficznych.</p>
+        <section className="gallery-state lp-section">
+          <p className="gallery-state-title">{content.emptyTitle}</p>
+          <p>{content.emptyText}</p>
         </section>
       ) : (
-        <section className="gallery-grid" aria-label="Galeria zdjęć">
-          {images.map((file) => (
-            <article className="gallery-card" key={file.id}>
-              <a className="gallery-image-link" href={buildFileUrl(file)} target="_blank" rel="noreferrer">
-                <img alt={file.name} className="gallery-image" loading="lazy" src={buildImageSrc(file)} />
-              </a>
-              <div className="gallery-card-body">
-                <h2>{file.name}</h2>
-                <a className="gallery-open-link" href={buildFileUrl(file)} target="_blank" rel="noreferrer">
-                  Otwórz w Google Drive
-                </a>
+        <>
+          <section className="gallery-grid" aria-label="Galeria zdjęć">
+            {images.map((file, index) => (
+              <button
+                className="gallery-image-button"
+                key={file.id}
+                onClick={() => openImage(index)}
+                type="button"
+                aria-label={content.openLabel}
+              >
+                <DriveImage file={file} className="gallery-image" size={1200} />
+              </button>
+            ))}
+          </section>
+
+          {activeIndex !== null && (
+            <div className="gallery-lightbox" onClick={closeImage} role="dialog" aria-modal="true">
+              <button
+                className="gallery-lightbox-close"
+                onClick={closeImage}
+                type="button"
+                aria-label={content.controls.close}
+              >
+                ×
+              </button>
+
+              <button
+                className="gallery-lightbox-arrow gallery-lightbox-arrow-left"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  showPrevious();
+                }}
+                type="button"
+                aria-label={content.controls.previous}
+              >
+                {"<"}
+              </button>
+
+              <div className="gallery-lightbox-image-wrap" onClick={(event) => event.stopPropagation()}>
+                <DriveImage
+                  key={images[activeIndex].id}
+                  file={images[activeIndex]}
+                  className="gallery-lightbox-image"
+                  size={4000}
+                  loading="eager"
+                />
               </div>
-            </article>
-          ))}
-        </section>
+
+              <button
+                className="gallery-lightbox-arrow gallery-lightbox-arrow-right"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  showNext();
+                }}
+                type="button"
+                aria-label={content.controls.next}
+              >
+                {">"}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </main>
   );

@@ -1,5 +1,4 @@
-import { useEffect, useMemo } from "react";
-import { Link, NavLink, Outlet, useOutletContext } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 
 import { siteContent } from "../lib/site-content";
 

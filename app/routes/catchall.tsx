@@ -1,23 +1,23 @@
 import { Link } from "react-router";
 
+import { siteContent } from "../lib/site-content";
+
 export function meta() {
-	return [{ title: "404" }, { name: "description", content: "Page not found." }];
+	return [{ title: siteContent.notFound.title }, { name: "description", content: siteContent.notFound.description }];
 }
 
 export default function CatchallPage() {
 	return (
   <main className="page not-found-page">
     <div className="container not-found-card">
-      <p className="not-found-label">Page not found</p>
+      <p className="not-found-label">{siteContent.notFound.label}</p>
 
-      <h1>404</h1>
+      <h1>{siteContent.notFound.heading}</h1>
 
-      <p className="not-found-text">
-        Nie znaleziono strony.
-      </p>
+      <p className="not-found-text">{siteContent.notFound.text}</p>
 
       <Link className="primary-button not-found-button" to="/">
-        Wróć na stronę główną
+        {siteContent.notFound.button}
       </Link>
     </div>
   </main>

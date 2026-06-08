@@ -34,6 +34,21 @@ type GalleryItem = {
   caption: string;
 };
 
+type SimplePageContent = {
+  title: string;
+  description: string;
+  intro: string;
+};
+
+type NotFoundContent = {
+  title: string;
+  description: string;
+  label: string;
+  heading: string;
+  text: string;
+  button: string;
+};
+
 export const siteContent = {
   title: "Przyjęcie z okazji obrony rozprawy doktorskiej",
   nav: [
@@ -183,7 +198,15 @@ export const siteContent = {
     },
     gallery: {
       title: "Galeria",
-      lead: "Zdjęcia dworku, sali, detali przyjęcia i doktorantki.",
+      lead: "Zapraszam wszystkich gości do dzielenia się zdjęciami z przyjęcia!",
+      description: "Galeria zdjęć pobierana z Google Drive.",
+      folderUrl:
+        "https://drive.google.com/drive/folders/12IbtyNab0Dsy-wGsxUTfVKPp_lpi1nJA?usp=sharing",
+      loading: "Wczytywanie zdjęć...",
+      errorTitle: "Nie można wyświetlić galerii",
+      emptyTitle: "Brak zdjęć",
+      emptyText: "Folder nie zwrócił jeszcze żadnych plików graficznych.",
+      openLabel: "Otwórz zdjęcie",
       items: [
         {
           title: "Dworek",
@@ -219,51 +242,64 @@ export const siteContent = {
     },
   },
   faq: {
-      title: "Informacje dodatkowe / FAQ",
-      items: [
-        {
-          question: "Do kiedy potwierdzić obecność?",
-          answer: "Proszę o RSVP do 14 czerwca 2026 r.",
-        },
-        {
-          question: "Czy nocleg jest zapewniony?",
-          answer: "Tak, nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
-        },
-        {
-          question: "Czy można przyjść z osobą towarzyszącą?",
-          answer: "Tak, wpisz liczbę osób w formularzu RSVP.",
-        },
-        {
-          question: "Gdzie zaparkować?",
-          answer: "Na terenie dworku.",
-        },
-        {
-          question: "Jak dojechać?",
-          answer: "Skorzystaj z mapy i przycisku Google Maps w sekcji dojazdu.",
-        },
-        {
-          question: "Jaki jest dress code?",
-          answer: "Smart casual.",
-        },
-        {
-          question: "Czy mam przynieść ze sobą swój ulubiony alkohol?",
-          answer: "Nie, podczas przyjęcia będzie dostępny bar z obsługą barmańską.",
-        },
-        {
-          question: "Czy będzie można potańczyć?",
-          answer: "Tak, DJ zadba o muzykę i dobrą atmosferę do tańca.",
-        },
-        {
-          question: "Jakiego upominku oczekuje organizatorka?",
-          answer: "W dalszą drogę najłatwiej zabrać to, co zmieści się w kopercie.",
-        },
-        {
-          question: "Mam specjalne wymagania żywieniowe, co zrobić?",
-          answer: "Proszę wpisać swoje preferencje żywieniowe w formularzu RSVP (do 14 czerwca 2026 r.).",
-        }
-
-      ] satisfies FaqItem[],
-    },
+    title: "Informacje dodatkowe / FAQ",
+    lead: "Najczęściej zadawane pytania przed przyjęciem.",
+    items: [
+      {
+        question: "Do kiedy potwierdzić obecność?",
+        answer: "Proszę o RSVP do 14 czerwca 2026 r.",
+      },
+      {
+        question: "Czy nocleg jest zapewniony?",
+        answer: "Tak, nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
+      },
+      {
+        question: "Czy można przyjść z osobą towarzyszącą?",
+        answer: "Tak, wpisz liczbę osób w formularzu RSVP.",
+      },
+      {
+        question: "Gdzie zaparkować?",
+        answer: "Na terenie dworku.",
+      },
+      {
+        question: "Jak dojechać?",
+        answer: "Skorzystaj z mapy i przycisku Google Maps w sekcji dojazdu.",
+      },
+      {
+        question: "Jaki jest dress code?",
+        answer: "Smart casual.",
+      },
+      {
+        question: "Czy mam przynieść ze sobą swój ulubiony alkohol?",
+        answer: "Nie, podczas przyjęcia będzie dostępny bar z obsługą barmańską.",
+      },
+      {
+        question: "Czy będzie można potańczyć?",
+        answer: "Tak, DJ zadba o muzykę i dobrą atmosferę do tańca.",
+      },
+      {
+        question: "Jakiego upominku oczekuje organizatorka?",
+        answer: "W dalszą drogę najłatwiej zabrać to, co zmieści się w kopercie.",
+      },
+      {
+        question: "Mam specjalne wymagania żywieniowe, co zrobić?",
+        answer: "Proszę wpisać swoje preferencje żywieniowe w formularzu RSVP (do 14 czerwca 2026 r.).",
+      },
+    ] satisfies FaqItem[],
+  },
+  menu: {
+    title: "Menu",
+    description: "Menu zostanie udostępnione wkrótce.",
+    intro: "Menu zostanie udostępnione wkrótce.",
+  } satisfies SimplePageContent,
+  notFound: {
+    title: "404",
+    description: "Page not found.",
+    label: "Page not found",
+    heading: "404",
+    text: "Nie znaleziono strony.",
+    button: "Wróć na stronę główną",
+  } satisfies NotFoundContent,
   contact: {
     title: "Kontakt",
     intro: "Jeśli masz pytania, napisz do organizatora.",
@@ -298,5 +334,5 @@ export const siteContent = {
     ] satisfies CalendarItem[],
   },
   footer: "Przyjęcie z okazji obrony rozprawy doktorskiej | Dworek Białołęka",
-  author: "Wojciech Wójcik"
+  author: "Wojciech Wójcik",
 };

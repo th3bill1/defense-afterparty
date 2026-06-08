@@ -1,17 +1,19 @@
+import { siteContent } from "../lib/site-content";
+
+import "./common.css";
+
 export function meta() {
   return [
-    { title: "Menu" },
-    { name: "description", content: "Menu zostanie udostępnione wkrótce." },
+    { title: siteContent.menu.title },
+    { name: "description", content: siteContent.menu.description },
   ];
 }
 
-export default function LandingPage() {
-    return (
-        <section className="section-title">
-            <div className="temporary-content">
-                <h1>Menu</h1>
-                <p>Menu zostanie udostępnione wkrótce.</p>
-            </div>
-        </section>
-    );
+export default function MenuPage() {
+  return (
+    <section className="lp-section">
+      <h1>{siteContent.menu.title}</h1>
+      <p className="lp-lead">{siteContent.menu.intro}</p>
+    </section>
+  );
 }
