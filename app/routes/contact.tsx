@@ -6,8 +6,8 @@ import "./common.css";
 
 export function meta() {
   return [
-    { title: "Kontakt" },
-    { name: "description", content: "Kontakt" },
+    { title: siteContent.contact.title },
+    { name: "description", content: siteContent.contact.intro },
   ];
 }
 
@@ -15,9 +15,9 @@ export default function ContactPage() {
   const [isFormLoaded, setIsFormLoaded] = useState(false);
 
   return (
-    <section>
+    <section className="lp-section">
       <h1>{siteContent.contact.title}</h1>
-      <p>{siteContent.contact.intro}</p>
+      <p className="lp-lead">{siteContent.contact.intro}</p>
 
       <article className="panel section-title">
         <strong>{siteContent.contact.contactLabel}</strong>

@@ -302,7 +302,7 @@ export const siteContent = {
   } satisfies NotFoundContent,
   contact: {
     title: "Kontakt",
-    intro: "Jeśli masz pytania, napisz do organizatora.",
+    intro: "Jeśli masz pytania, napisz do organizatora przy pomocy formularza poniżej lub zadzwoń.",
     contactLabel: "Anna Choma",
     direct: "Telefon: +48 884 375 483",
     formLabels: {
