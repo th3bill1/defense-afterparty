@@ -16,6 +16,7 @@ export function meta() {
 export default function LandingPage() {
 
   const content = siteContent.landing;
+  const faq = siteContent.faq;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +41,6 @@ export default function LandingPage() {
     <>
       <section className="lp-section lp-hero" data-reveal>
         <div className="lp-hero-content">
-          <Badge>{content.hero.eyebrow}</Badge>
           <h1>{content.hero.headline}</h1>
           <div className="lp-hero-meta">{content.hero.dateBadge}</div>
 
@@ -146,9 +146,9 @@ export default function LandingPage() {
       </section>
 
       <section className="lp-section" data-reveal>
-        <h2>{content.faq.title}</h2>
+        <h2>{faq.title}</h2>
         <div className="lp-faq-grid">
-          {content.faq.items.map((item) => (
+          {faq.items.map((item) => (
             <article className="lp-card" key={item.question}>
               <h3>{item.question}</h3>
               <p>{item.answer}</p>

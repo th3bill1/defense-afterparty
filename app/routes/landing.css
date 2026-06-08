@@ -483,6 +483,66 @@
   animation-delay: 380ms;
 }
 
+.lp-section[data-reveal].is-visible .lp-info-grid > *:nth-child(6),
+.lp-section[data-reveal].is-visible .lp-tip-grid > *:nth-child(6),
+.lp-section[data-reveal].is-visible .lp-faq-grid > *:nth-child(6),
+.lp-section[data-reveal].is-visible .lp-gallery-mini > *:nth-child(6),
+.lp-section[data-reveal].is-visible .lp-gallery-grid > *:nth-child(6),
+.lp-section[data-reveal].is-visible .lp-timeline > *:nth-child(6),
+.lp-section[data-reveal].is-visible .lp-hero-actions > *:nth-child(6) {
+  animation-delay: 460ms;
+}
+
+.lp-section[data-reveal].is-visible .lp-info-grid > *:nth-child(7),
+.lp-section[data-reveal].is-visible .lp-tip-grid > *:nth-child(7),
+.lp-section[data-reveal].is-visible .lp-faq-grid > *:nth-child(7),
+.lp-section[data-reveal].is-visible .lp-gallery-mini > *:nth-child(7),
+.lp-section[data-reveal].is-visible .lp-gallery-grid > *:nth-child(7),
+.lp-section[data-reveal].is-visible .lp-timeline > *:nth-child(7),
+.lp-section[data-reveal].is-visible .lp-hero-actions > *:nth-child(7) {
+  animation-delay: 540ms;
+}
+
+.lp-section[data-reveal].is-visible .lp-info-grid > *:nth-child(8),
+.lp-section[data-reveal].is-visible .lp-tip-grid > *:nth-child(8),
+.lp-section[data-reveal].is-visible .lp-faq-grid > *:nth-child(8),
+.lp-section[data-reveal].is-visible .lp-gallery-mini > *:nth-child(8),
+.lp-section[data-reveal].is-visible .lp-gallery-grid > *:nth-child(8),
+.lp-section[data-reveal].is-visible .lp-timeline > *:nth-child(8),
+.lp-section[data-reveal].is-visible .lp-hero-actions > *:nth-child(8) {
+  animation-delay: 540ms;
+}
+
+.lp-section[data-reveal].is-visible .lp-info-grid > *:nth-child(9),
+.lp-section[data-reveal].is-visible .lp-tip-grid > *:nth-child(9),
+.lp-section[data-reveal].is-visible .lp-faq-grid > *:nth-child(9),
+.lp-section[data-reveal].is-visible .lp-gallery-mini > *:nth-child(9),
+.lp-section[data-reveal].is-visible .lp-gallery-grid > *:nth-child(9),
+.lp-section[data-reveal].is-visible .lp-timeline > *:nth-child(9),
+.lp-section[data-reveal].is-visible .lp-hero-actions > *:nth-child(9) {
+  animation-delay: 600ms;
+}
+
+.lp-section[data-reveal].is-visible .lp-info-grid > *:nth-child(10),
+.lp-section[data-reveal].is-visible .lp-tip-grid > *:nth-child(10),
+.lp-section[data-reveal].is-visible .lp-faq-grid > *:nth-child(10),
+.lp-section[data-reveal].is-visible .lp-gallery-mini > *:nth-child(10),
+.lp-section[data-reveal].is-visible .lp-gallery-grid > *:nth-child(10),
+.lp-section[data-reveal].is-visible .lp-timeline > *:nth-child(10),
+.lp-section[data-reveal].is-visible .lp-hero-actions > *:nth-child(10) {
+  animation-delay: 680ms;
+}
+
+.lp-section[data-reveal].is-visible .lp-info-grid > *:nth-child(11),
+.lp-section[data-reveal].is-visible .lp-tip-grid > *:nth-child(11),
+.lp-section[data-reveal].is-visible .lp-faq-grid > *:nth-child(11),
+.lp-section[data-reveal].is-visible .lp-gallery-mini > *:nth-child(11),
+.lp-section[data-reveal].is-visible .lp-gallery-grid > *:nth-child(11),
+.lp-section[data-reveal].is-visible .lp-timeline > *:nth-child(11),
+.lp-section[data-reveal].is-visible .lp-hero-actions > *:nth-child(11) {
+  animation-delay: 760ms;
+}
+
 @keyframes lp-child-rise {
   from {
     opacity: 0;

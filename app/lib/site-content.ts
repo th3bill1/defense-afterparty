@@ -35,7 +35,7 @@ type GalleryItem = {
 };
 
 export const siteContent = {
-  title: "Przyjęcie z okazji obrony doktoratu",
+  title: "Przyjęcie z okazji obrony rozprawy doktorskiej",
   nav: [
     { to: "/", label: "Start" },
     { to: "/faq", label: "FAQ" },
@@ -45,11 +45,10 @@ export const siteContent = {
   ] satisfies NavItem[],
   landing: {
     meta: {
-      title: "Przyjęcie z okazji obrony doktoratu",
+      title: "Przyjęcie z okazji obrony",
       description: "Uroczyste przyjęcie z okazji obrony rozprawy doktorskiej - Dworek Białołęka, 27 czerwca 2026.",
     },
     hero: {
-      eyebrow: "Zaproszenie",
       headline: "Najpiękniej jest świętowć w gronie osób, które były częścią tej drogi",
       intro: "Do usunięcia",
       dateBadge: "27 czerwca 2026 | 18:00",
@@ -208,7 +207,17 @@ export const siteContent = {
         next: "Następne",
       },
     },
-    faq: {
+    contact: {
+      title: "Kontakt",
+      lead: "W razie pytań skontaktuj się ze mną.",
+      phoneLabel: "Telefon",
+      emailLabel: "E-mail",
+      nameLabel: "Anna Choma",
+      phone: "+48 884 375 483",
+      cta: "Skontaktuj się",
+    },
+  },
+  faq: {
       title: "Informacje dodatkowe / FAQ",
       items: [
         {
@@ -235,32 +244,25 @@ export const siteContent = {
           question: "Jaki jest dress code?",
           answer: "Smart casual.",
         },
+        {
+          question: "Czy mam przynieść ze sobą swój ulubiony alkohol?",
+          answer: "Nie, podczas przyjęcia będzie dostępny bar z obsługą barmańską.",
+        },
+        {
+          question: "Czy będzie można potańczyć?",
+          answer: "Tak, DJ zadba o muzykę i dobrą atmosferę do tańca.",
+        },
+        {
+          question: "Jakiego upominku oczekuje organizatorka?",
+          answer: "W dalszą drogę najlłatwiej zabrać to, co zmieści się w kopercie.",
+        },
+        {
+          question: "Mam specjalne wymagania żywieniowe, co zrobić?",
+          answer: "Proszę wpisać swoje preferencje żywieniowe w formularzu RSVP (do 14 czerwca 2026 r.).",
+        }
+
       ] satisfies FaqItem[],
     },
-    contact: {
-      title: "Kontakt",
-      lead: "W razie pytań skontaktuj się ze mną.",
-      phoneLabel: "Telefon",
-      emailLabel: "E-mail",
-      nameLabel: "Anna Choma",
-      phone: "+48 884 375 483",
-      cta: "Skontaktuj się",
-    },
-  },
-  faq: {
-    title: "FAQ",
-    lead: "Najczęstsze pytania dotyczące przyjęcia.",
-    items: [
-      {
-        question: "Do kiedy potwierdzić obecność?",
-        answer: "Do 14 czerwca 2026 r.",
-      },
-      {
-        question: "Czy nocleg jest zapewniony?",
-        answer: "Nocleg zapewniony jest dla gości dojeżdżających poza województwa mazowieckiego.",
-      },
-    ] satisfies FaqItem[],
-  },
   contact: {
     title: "Kontakt",
     intro: "Jeśli masz pytania, napisz do organizatora.",
@@ -294,6 +296,6 @@ export const siteContent = {
       },
     ] satisfies CalendarItem[],
   },
-  footer: "Przyjęcie z okazji obrony doktoratu | Dworek Białołęka",
+  footer: "Przyjęcie z okazji obrony rozprawy doktorskiej | Dworek Białołęka",
   author: "Wojciech Wójcik"
 };

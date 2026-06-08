@@ -17,7 +17,7 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
   },
-  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+  { rel: "icon", type: "image/svg+xml", href: "/star.png" },
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap",
