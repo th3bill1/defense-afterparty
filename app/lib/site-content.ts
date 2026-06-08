@@ -226,7 +226,7 @@ export const siteContent = {
         },
         {
           question: "Czy nocleg jest zapewniony?",
-          answer: "Tak, po przyjęciu dla gości spoza województwa mazowieckiego jest opłacony pokój hotelowy.",
+          answer: "Tak, nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
         },
         {
           question: "Czy można przyjść z osobą towarzyszącą?",
