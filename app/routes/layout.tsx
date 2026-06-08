@@ -3,7 +3,6 @@ import { Link, NavLink, Outlet } from "react-router";
 import { siteContent } from "../lib/site-content";
 
 export default function LayoutRoute() {
-
   return (
     <div className="shell">
       <header className="site-header">

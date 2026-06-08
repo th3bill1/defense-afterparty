@@ -13,14 +13,6 @@
   text-decoration-style: solid;
 }
 
-.gallery-header h1 {
-  margin: 0;
-  font-size: clamp(1rem, 2vw, 2rem);
-}
-
-.gallery-header .lp-lead {
-  margin-bottom: 0;
-}
 
 .gallery-state {
   text-align: center;
@@ -117,8 +109,8 @@
 .gallery-lightbox-close {
   top: 1rem;
   right: 1rem;
-  width: 44px;
-  height: 44px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   font-size: 2rem;
   line-height: 1;
@@ -130,8 +122,8 @@
 
 .gallery-lightbox-arrow {
   top: 50%;
-  width: 52px;
-  height: 72px;
+  width: 34px;
+  height: 50px;
   border-radius: 999px;
   font-size: 2rem;
   transform: translateY(-50%);
@@ -170,8 +162,8 @@
   }
 
   .gallery-lightbox-arrow {
-    width: 42px;
-    height: 58px;
+    width: 30px;
+    height: 39px;
     font-size: 1.5rem;
   }
 }
