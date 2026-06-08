@@ -160,7 +160,7 @@ export const siteContent = {
         },
         {
           label: "Śniadanie",
-          value: "9:00 - 12:00, Skarbka z Gór 23A/23",
+          value: "9:00 - 12:00, ul. Skarbka z Gór 23A/23",
         }
       ] satisfies DetailItem[],
     },
