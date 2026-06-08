@@ -213,7 +213,7 @@ export const siteContent = {
       items: [
         {
           question: "Do kiedy potwierdzić obecność?",
-          answer: "Prosimy o RSVP do 14 czerwca 2026 r.",
+          answer: "Proszę o RSVP do 14 czerwca 2026 r.",
         },
         {
           question: "Czy nocleg jest zapewniony?",
