@@ -59,8 +59,8 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="lp-hero-photo" role="img" aria-label={content.hero.photoPlaceholder}>
-          <span>{content.hero.photoPlaceholder}</span>
+        <div className="lp-hero-photo" role="img" aria-label={content.hero.photoUrl}>
+          <img src={content.hero.photoUrl} alt={content.hero.photoUrl} />
         </div>
       </section>
 
@@ -206,6 +206,8 @@ export default function LandingPage() {
         <p className="lp-lead">{content.contact.lead}</p>
         <article className="lp-card lp-contact-card">
           <p>
+            <strong>{content.contact.nameLabel}</strong>
+            <br />
             <strong>{content.contact.phoneLabel}:</strong> {content.contact.phone}
           </p>
         </article>

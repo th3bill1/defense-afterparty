@@ -6,16 +6,20 @@ export function meta() {
 
 export default function CatchallPage() {
 	return (
-		<main className="page">
-			<div className="container panel">
-				<h1>404</h1>
-				<p>Nie znaleziono strony / Page not found.</p>
-				<p>
-					<Link className="nav-link" to="/">
-						Wroc na strone glowna / Back to home
-					</Link>
-				</p>
-			</div>
-		</main>
-	);
+  <main className="page not-found-page">
+    <div className="container not-found-card">
+      <p className="not-found-label">Page not found</p>
+
+      <h1>404</h1>
+
+      <p className="not-found-text">
+        Nie znaleziono strony.
+      </p>
+
+      <Link className="primary-button not-found-button" to="/">
+        Wróć na stronę główną
+      </Link>
+    </div>
+  </main>
+);
 }

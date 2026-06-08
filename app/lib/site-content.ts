@@ -40,11 +40,11 @@ export const siteContent = {
     { to: "/", label: "Start" },
     { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Kontakt" },
-    { to: "/calendar", label: "Kalendarz" },
+    { to: "/menu", label: "Menu" },
   ] satisfies NavItem[],
   landing: {
     meta: {
-      title: "Zaproszenie na przyjęcie z okazji obrony rozprawy doktorskiej",
+      title: "Przyjęcie z okazji obrony doktoratu",
       description: "Uroczyste przyjęcie z okazji obrony rozprawy doktorskiej - Dworek Białołęka, 27 czerwca 2026.",
     },
     hero: {
@@ -58,7 +58,7 @@ export const siteContent = {
         directions: "Wskazówki dojazdowe",
         timeline: "Harmonogram",
       },
-      photoPlaceholder: "Miejsce na zdjęcie doktorantki / dworku",
+      photoUrl: "doktor_chlANIA.jpg",
     },
     keyInfo: {
       title: "Szczegóły przyjęcia",
@@ -148,7 +148,7 @@ export const siteContent = {
     },
     hotel: {
       title: "Nocleg",
-      lead: "Po przyjęciu zapewniamy gościom opłacony pokój hotelowy.",
+      lead: "Po przyjęciu zapewniamy gościom opłacony pokój hotelowy. Nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
       details: [
         {
           label: "Zameldowanie",
@@ -170,10 +170,12 @@ export const siteContent = {
         { time: "18:00", title: "Rozpoczęcie przyjęcia" },
         { time: "18:15", title: "Aperitif" },
         { time: "18:30", title: "Obiad" },
-        { time: "19:30", title: "Wspólne świętowanie" },
-        { time: "21:00", title: "Niespodzianka dla gości" },
+        { time: "19:30", title: "Pierwsza publikacja (na parkiecie)" },
+        { time: "20:00", title: "Tort" },
+        { time: "21:00", title: "Doktorat. Historia przetrwania" },
         { time: "22:00", title: "Ciepły posiłek" },
-        { time: "23:00", title: "Niespodzianka dla gości" },
+        { time: "23:00", title: "Ostatni egzamin" },
+        { time: "00:00", title: "Doktoczepiny" },
         { time: "01:00", title: "Ciepły posiłek" },
         { time: "04:00", title: "Zakończenie przyjęcia" },
       ] satisfies TimelineItem[],
@@ -230,7 +232,7 @@ export const siteContent = {
         },
         {
           question: "Jaki jest dress code?",
-          answer: "Smart casuals.",
+          answer: "Smart casual.",
         },
       ] satisfies FaqItem[],
     },
@@ -239,6 +241,7 @@ export const siteContent = {
       lead: "W razie pytań skontaktuj się ze mną.",
       phoneLabel: "Telefon",
       emailLabel: "E-mail",
+      nameLabel: "Anna Choma",
       phone: "+48 884 375 483",
       cta: "Skontaktuj się",
     },
@@ -249,17 +252,18 @@ export const siteContent = {
     items: [
       {
         question: "Do kiedy potwierdzić obecność?",
-        answer: "Do 31 maja 2026 r.",
+        answer: "Do 14 czerwca 2026 r.",
       },
       {
         question: "Czy nocleg jest zapewniony?",
-        answer: "Tak, po przyjęciu goście mają opłacony pokój hotelowy.",
+        answer: "Nocleg zapewniony jest dla gości dojeżdżających poza województwa mazowieckiego.",
       },
     ] satisfies FaqItem[],
   },
   contact: {
     title: "Kontakt",
     intro: "Jeśli masz pytania, napisz do organizatora.",
+    contactLabel: "Anna Choma",
     direct: "Telefon: +48 884 375 483",
     formLabels: {
       name: "Imię",
@@ -289,5 +293,6 @@ export const siteContent = {
       },
     ] satisfies CalendarItem[],
   },
-  footer: "Przyjęcie po obronie doktoratu | Dworek Białołęka",
+  footer: "Przyjęcie z okazji obrony doktoratu | Dworek Białołęka",
+  author: "Wojciech Wójcik"
 };

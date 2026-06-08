@@ -5,7 +5,7 @@ export default [
 		index("routes/landing.tsx"),
 		route("faq", "routes/faq.tsx"),
 		route("contact", "routes/contact.tsx"),
-		route("calendar", "routes/calendar.tsx"),
+		route("menu", "routes/menu.tsx"),
 	]),
 	route("*", "routes/catchall.tsx"),
 ] satisfies RouteConfig;

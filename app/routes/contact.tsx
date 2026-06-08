@@ -16,6 +16,8 @@ export default function ContactPage() {
       <p>{siteContent.contact.intro}</p>
 
       <article className="panel section-title">
+        <strong>{siteContent.contact.contactLabel}</strong>
+        <br />
         <strong>{siteContent.contact.direct}</strong>
       </article>
 

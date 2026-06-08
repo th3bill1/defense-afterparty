@@ -38,7 +38,10 @@ export default function LayoutRoute() {
       </main>
 
       <footer className="site-footer">
-        <div className="container">{siteContent.footer}</div>
+        <div className="container footer-content">
+          <div>{siteContent.footer}</div>
+          <div className="author">Autor strony: {siteContent.author}</div>
+        </div>
       </footer>
     </div>
   );

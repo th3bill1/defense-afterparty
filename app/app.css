@@ -110,6 +110,7 @@ a {
 
 .page {
   padding: 1.35rem 0 3rem;
+  min-height: 85vh;
 }
 
 .section-title {
@@ -178,6 +179,28 @@ a {
   padding: 1.2rem 0 2rem;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .author {
+    text-align: left;
+  }
+}
+
 @media (max-width: 760px) {
   .header-inner {
     flex-direction: column;
@@ -187,4 +210,61 @@ a {
   .calendar-row {
     grid-template-columns: 1fr;
   }
+}
+
+.temporary-content {
+  text-align: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.not-found-page {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  padding: 3rem 0;
+}
+
+.not-found-card {
+  max-width: 560px;
+  text-align: center;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--gold) 30%);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--gold) 14%, transparent), transparent 45%),
+    var(--surface);
+  padding: 3rem 2rem;
+  box-shadow: 0 24px 80px color-mix(in srgb, black 45%, transparent);
+}
+
+.not-found-label {
+  margin: 0 0 0.5rem;
+  color: var(--gold-strong);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.not-found-card h1 {
+  margin: 0;
+  font-size: clamp(5rem, 16vw, 9rem);
+  line-height: 0.9;
+  color: var(--gold);
+}
+
+.not-found-text {
+  margin: 1.25rem auto 2rem;
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.not-found-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
