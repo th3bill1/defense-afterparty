@@ -39,6 +39,7 @@ export const siteContent = {
   nav: [
     { to: "/", label: "Start" },
     { to: "/faq", label: "FAQ" },
+    { to: "/rsvp", label: "RSVP" },
     { to: "/contact", label: "Kontakt" },
     { to: "/menu", label: "Menu" },
   ] satisfies NavItem[],

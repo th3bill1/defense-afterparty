@@ -26,12 +26,46 @@ body {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   font-family: "Manrope", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 12% 4%, color-mix(in srgb, var(--gold) 20%, transparent) 0%, transparent 35%),
-    radial-gradient(circle at 95% 0%, color-mix(in srgb, var(--ink) 10%, transparent) 0%, transparent 32%),
+    radial-gradient(circle at 12% 4%, color-mix(in srgb, var(--gold) 24%, transparent) 0%, transparent 35%),
+    radial-gradient(circle at 95% 0%, color-mix(in srgb, var(--ink) 14%, transparent) 0%, transparent 32%),
+    radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--gold) 8%, transparent) 0%, transparent 38%),
     var(--bg);
   color: var(--text);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: -1;
+  width: clamp(16rem, 24vw, 30rem);
+  height: clamp(16rem, 24vw, 30rem);
+  border-radius: 50%;
+  filter: blur(56px);
+  opacity: 0.14;
+  transform: translate3d(0, 0, 0);
+}
+
+body::before {
+  top: -5rem;
+  left: -7rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--gold) 82%, white 18%) 0%, color-mix(in srgb, var(--gold) 30%, transparent) 45%, transparent 74%);
+  animation: lp-body-drift-1 24s ease-in-out infinite alternate;
+}
+
+body::after {
+  right: -8rem;
+  bottom: -6rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--gold) 58%, white 42%) 0%, color-mix(in srgb, var(--gold) 24%, transparent) 46%, transparent 76%);
+  opacity: 0.1;
+  animation: lp-body-drift-2 28s ease-in-out infinite alternate;
 }
 
 h1,
@@ -39,6 +73,25 @@ h2,
 h3 {
   font-family: "Fraunces", Georgia, serif;
   letter-spacing: 0.01em;
+}
+
+h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.8rem;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(5.75rem, 42%);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold-strong), color-mix(in srgb, var(--gold) 35%, transparent));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--gold) 25%, transparent);
 }
 
 a {
@@ -209,6 +262,46 @@ a {
 
   .calendar-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@keyframes lp-body-drift-1 {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(1.5rem, 2rem, 0) scale(1.06);
+  }
+}
+
+@keyframes lp-body-drift-2 {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-1.75rem, -2.2rem, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body::before,
+  body::after {
+    animation: none !important;
   }
 }
 

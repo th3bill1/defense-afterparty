@@ -1,0 +1,19 @@
+.lp-section {
+  margin: 1.35rem 0;
+  padding: clamp(1rem, 2.8vw, 1.7rem);
+  border-radius: 1.15rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 16px 34px color-mix(in srgb, black 6%, transparent);
+}
+
+.lp-section h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.lp-lead {
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

@@ -4,6 +4,7 @@ import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { siteContent } from "../lib/site-content";
 import "./landing.css";
+import "./common.css";
 
 export function meta() {
   return [
@@ -44,7 +45,7 @@ export default function LandingPage() {
           <div className="lp-hero-meta">{content.hero.dateBadge}</div>
 
           <div className="lp-hero-actions">
-            <a className="lp-cta lp-cta-primary" href="#rsvp">
+            <a className="lp-cta lp-cta-primary" href="/rsvp">
               {content.hero.buttons.confirm}
             </a>
             <a className="lp-cta" href="#miejsce">
@@ -116,52 +117,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="lp-section" id="rsvp" data-reveal>
-        <h2>{content.rsvp.title}</h2>
-        <article className="lp-deadline">{content.rsvp.deadline}</article>
-
-        <form className="lp-form" onSubmit={(event) => event.preventDefault()}>
-          <label>
-            {content.rsvp.fields.fullName}
-            <input placeholder={content.rsvp.placeholders.name} type="text" />
-          </label>
-
-          <label>
-            {content.rsvp.fields.attendance}
-            <select defaultValue="yes">
-              <option value="yes">{content.rsvp.options.attendanceYes}</option>
-              <option value="no">{content.rsvp.options.attendanceNo}</option>
-            </select>
-          </label>
-
-          <label>
-            {content.rsvp.fields.guestCount}
-            <input min={1} placeholder={content.rsvp.placeholders.guestCount} type="number" />
-          </label>
-
-          <label>
-            {content.rsvp.fields.stay}
-            <select defaultValue="yes">
-              <option value="yes">{content.rsvp.options.stayYes}</option>
-              <option value="no">{content.rsvp.options.stayNo}</option>
-            </select>
-          </label>
-
-          <label>
-            {content.rsvp.fields.diet}
-            <input placeholder={content.rsvp.placeholders.diet} type="text" />
-          </label>
-
-          <label className="lp-form-full">
-            {content.rsvp.fields.message}
-            <textarea placeholder={content.rsvp.placeholders.message} rows={5} />
-          </label>
-
-          <Button className="lp-submit" type="submit">
-            {content.rsvp.fields.submit}
-          </Button>
-        </form>
-      </section>
+      
 
       <section className="lp-section" data-reveal>
         <h2>{content.hotel.title}</h2>

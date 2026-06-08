@@ -1,3 +1,10 @@
+export function meta() {
+  return [
+    { title: "Menu" },
+    { name: "description", content: "Menu zostanie udostępnione wkrótce." },
+  ];
+}
+
 export default function LandingPage() {
     return (
         <section className="section-title">

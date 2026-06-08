@@ -2,8 +2,8 @@ import { siteContent } from "../lib/site-content";
 
 export function meta() {
   return [
-    { title: "FAQ template" },
-    { name: "description", content: "FAQ page template for event websites." },
+    { title: "FAQ" },
+    { name: "description", content: "FAQ" },
   ];
 }
 
