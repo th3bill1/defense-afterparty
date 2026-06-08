@@ -42,6 +42,7 @@ export const siteContent = {
     { to: "/rsvp", label: "RSVP" },
     { to: "/contact", label: "Kontakt" },
     { to: "/menu", label: "Menu" },
+    { to: "/galeria", label: "Galeria" },
   ] satisfies NavItem[],
   landing: {
     meta: {

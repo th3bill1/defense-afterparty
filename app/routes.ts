@@ -7,6 +7,7 @@ export default [
 		route("rsvp", "routes/rsvp.tsx"),
 		route("contact", "routes/contact.tsx"),
 		route("menu", "routes/menu.tsx"),
+		route("galeria", "routes/galeria.tsx"),
 	]),
 	route("*", "routes/catchall.tsx"),
 ] satisfies RouteConfig;
