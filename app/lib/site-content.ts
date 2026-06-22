@@ -322,7 +322,7 @@ export const siteContent = {
           "Purre",
           "Sałata z ogórkiem, rzodkiewką i szczypiorkiem",
         ],
-        vegetarian: "Kotlet sojowy, purre, sałata z ogórkiem, rzodkiewką i szczypiorkiem",
+        vegetarian: "Kotlet sojowy",
       },
       {
         title: "3 danie gorące",
