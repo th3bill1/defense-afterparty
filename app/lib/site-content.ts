@@ -153,7 +153,7 @@ export const siteContent = {
     },
     rsvp: {
       title: "RSVP",
-      deadline: "Proszę o potwierdzenie przybycia do dnia 14 czerwca 2026 r.",
+      deadline: "Proszę o potwierdzenie przybycia.",
       fields: {
         fullName: "Imię i nazwisko",
         attendance: "Obecność",
@@ -260,10 +260,6 @@ export const siteContent = {
     lead: "Najczęściej zadawane pytania przed przyjęciem.",
     items: [
       {
-        question: "Do kiedy potwierdzić obecność?",
-        answer: "Proszę o RSVP do 14 czerwca 2026 r.",
-      },
-      {
         question: "Czy nocleg jest zapewniony?",
         answer: "Tak, nocleg zapewniony jest dla gości dojeżdżających spoza województwa mazowieckiego.",
       },
@@ -297,7 +293,7 @@ export const siteContent = {
       },
       {
         question: "Mam specjalne wymagania żywieniowe, co zrobić?",
-        answer: "Proszę wpisać swoje preferencje żywieniowe w formularzu RSVP (do 14 czerwca 2026 r.).",
+        answer: "Proszę wpisać swoje preferencje żywieniowe w formularzu RSVP.",
       },
     ] satisfies FaqItem[],
   },
@@ -406,27 +402,6 @@ export const siteContent = {
       message: "Wiadomość",
       send: "Wyślij (szablon)",
     },
-  },
-  calendar: {
-    title: "Kalendarz",
-    intro: "Skrócony plan przygotowań i dnia wydarzenia.",
-    items: [
-      {
-        date: "31.05.2026",
-        title: "Termin RSVP",
-        note: "Ostateczna data potwierdzeń przybycia.",
-      },
-      {
-        date: "27.06.2026",
-        title: "Dzień przyjęcia",
-        note: "Start wydarzenia o 18:00.",
-      },
-      {
-        date: "28.06.2026",
-        title: "Nocleg i śniadanie",
-        note: "[Placeholder: szczegóły porannego wymeldowania].",
-      },
-    ] satisfies CalendarItem[],
   },
   footer: "Przyjęcie z okazji obrony rozprawy doktorskiej | Dworek Białołęka",
   author: "Wojciech Wójcik",
