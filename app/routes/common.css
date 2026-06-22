@@ -17,3 +17,158 @@
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+.menu-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+}
+
+.menu-eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--gold-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.menu-header h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  letter-spacing: -0.05em;
+}
+
+.menu-header .lp-lead {
+  margin: 0.7rem auto 0;
+  max-width: 62ch;
+}
+
+.menu-paper {
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, var(--line));
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--gold) 8%, transparent), transparent 34rem),
+    color-mix(in srgb, var(--surface) 82%, black 18%);
+  box-shadow: 0 18px 42px color-mix(in srgb, black 16%, transparent);
+  padding: clamp(1.1rem, 3vw, 2rem);
+}
+
+.menu-block {
+  break-inside: avoid;
+  margin-bottom: 1.6rem;
+}
+
+.menu-block h2 {
+  position: relative;
+  margin: 0 0 0.95rem;
+  padding-bottom: 0.55rem;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.menu-block h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+.menu-block-featured {
+  margin-bottom: 2rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
+}
+
+.menu-courses-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.menu-course {
+  border: 1px solid color-mix(in srgb, var(--gold) 34%, var(--line));
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--surface-soft) 55%, transparent);
+  padding: 1rem;
+}
+
+.menu-course h3 {
+  margin: 0 0 0.75rem;
+  color: color-mix(in srgb, var(--text) 92%, var(--gold) 8%);
+  font-size: 1.08rem;
+}
+
+.menu-columns {
+  columns: 1;
+  column-gap: 2rem;
+}
+
+.menu-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  color: color-mix(in srgb, var(--text) 88%, var(--muted) 12%);
+  line-height: 1.45;
+}
+
+.menu-item::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-top: 0.48em;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
+.menu-item-text {
+  flex: 0 1 auto;
+}
+
+.menu-tag {
+  flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  color: var(--gold-strong);
+  padding: 0.12rem 0.48rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (min-width: 720px) {
+  .menu-courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-columns {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1080px) {
+  .menu-columns {
+    columns: 3;
+  }
+}

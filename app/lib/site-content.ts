@@ -34,10 +34,24 @@ type GalleryItem = {
   caption: string;
 };
 
-type SimplePageContent = {
+type MenuHotDish = {
+  title: string;
+  items: string[];
+  vegetarian: string;
+};
+
+type MenuSection = {
+  title: string;
+  items: string[];
+};
+
+type MenuContent = {
   title: string;
   description: string;
   intro: string;
+  hotDishesTitle: string;
+  hotDishes: MenuHotDish[];
+  sections: MenuSection[];
 };
 
 type NotFoundContent = {
@@ -172,7 +186,7 @@ export const siteContent = {
         },
         {
           label: "Wymeldowanie",
-          value: "Do 10:00",
+          value: "Do 11:30",
         },
         {
           label: "Śniadanie",
@@ -289,9 +303,90 @@ export const siteContent = {
   },
   menu: {
     title: "Menu",
-    description: "Menu zostanie udostępnione wkrótce.",
-    intro: "Menu zostanie udostępnione wkrótce.",
-  } satisfies SimplePageContent,
+    description: "Menu przyjęcia z daniami gorącymi, przystawkami, deserami, napojami i alkoholem.",
+    intro: "Poniżej znajdziesz dania gorące, propozycje wegetariańskie oraz bufet z przystawkami, deserami i napojami.",
+    hotDishesTitle: "Dania gorące",
+    hotDishes: [
+      {
+        title: "1 danie gorące",
+        items: [
+          "Rosół wykwintny z kuchni staropolskiej z makaronem",
+          "Krem z pomidorów z grzanką",
+        ],
+        vegetarian: "Krem z pomidorów z grzanką",
+      },
+      {
+        title: "2 danie gorące",
+        items: [
+          "Dewolay",
+          "Purre",
+          "Sałata z ogórkiem, rzodkiewką i szczypiorkiem",
+        ],
+        vegetarian: "Kotlet sojowy, purre, sałata z ogórkiem, rzodkiewką i szczypiorkiem",
+      },
+      {
+        title: "3 danie gorące",
+        items: ["Gulasz węgierski"],
+        vegetarian: "Leczo",
+      },
+      {
+        title: "4 danie gorące",
+        items: ["Barszcz czerwony z krokietem mięsnym"],
+        vegetarian: "Barszcz czerwony z krokietem warzywnym",
+      },
+    ] satisfies MenuHotDish[],
+    sections: [
+      {
+        title: "Przystawki w formie szwedzkiego stołu",
+        items: [
+          "Zestaw wędlin: pieczona karkówka, schab, boczek, szynka, pasztet z żurawiną, kabanosy, krucha kiełbasa",
+          "Deska z wiejskimi specjałami",
+          "Jaja faszerowane pieczarkami i łososiem",
+          "Wrapy mięso-warzywne",
+          "Wrapy wege",
+          "Szynka z sałatką jarzynową",
+          "Carpaccio z buraka",
+          "Roladka z łososia z serkiem kremowym i szpinakiem",
+          "Gyros",
+        ],
+      },
+      {
+        title: "Owoce",
+        items: ["Mix owoców"],
+      },
+      {
+        title: "Ciasta",
+        items: [
+          "Pychotka",
+          "Szarlotka krucha",
+          "Brauni",
+          "Sernik na zimno z owocami",
+          "Rurki z bitą śmietaną, eklerki i ptysie",
+        ],
+      },
+      {
+        title: "Napoje",
+        items: [
+          "Kawa",
+          "Herbata",
+          "Soki owocowe",
+          "Napoje gazowane",
+          "Woda niegazowana",
+        ],
+      },
+      {
+        title: "Alkohol",
+        items: [
+          "Wódka",
+          "Whisky",
+          "Wino",
+          "Piwo",
+          "Wino bezalkoholowe",
+          "Piwo bezalkoholowe",
+        ],
+      },
+    ] satisfies MenuSection[],
+  } satisfies MenuContent,
   notFound: {
     title: "404",
     description: "Page not found.",
