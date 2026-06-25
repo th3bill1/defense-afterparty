@@ -197,13 +197,13 @@ export const siteContent = {
     timeline: {
       title: "Harmonogram",
       items: [
-        { time: "18:00", title: "Rozpoczęcie przyjęcia" },
+        { time: "18:00", title: "Przybycie gości" },
         { time: "18:15", title: "Aperitif" },
         { time: "18:30", title: "Obiad" },
-        { time: "19:30", title: "Pierwsza publikacja (na parkiecie)" },
+        { time: "19:30", title: "Rozpoczęcie zajęć praktycznych" },
         { time: "20:30", title: "Doktorat. Historia przetrwania" },
         { time: "21:30", title: "Ciepły posiłek" },
-        { time: "22:30", title: "Ostatni egzamin" },
+        { time: "22:30", title: "Występ humorystyczno-satyryczny" },
         { time: "23:00", title: "Tort" },
         { time: "00:00", title: "Doktoczepiny" },
         { time: "00:30", title: "Ciepły posiłek" },
