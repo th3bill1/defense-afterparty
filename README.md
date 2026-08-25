@@ -1,27 +1,58 @@
-# Event Website Template
+# Przyjęcie z okazji obrony rozprawy doktorskiej
 
-This project is a starter template for an event information + invitation website.
+Strona informacyjna i zaproszenie na przyjęcie z okazji obrony rozprawy doktorskiej. Aplikacja jest zbudowana w React Router 7 i przygotowana do wdrożenia na Cloudflare Workers.
 
-## Included pages
+## Zawartość
 
-- Landing page (information and photo placeholders)
-- FAQ page
-- Contact page (template form)
-- Calendar page
+- strona główna z informacjami o wydarzeniu, miejscem, dojazdem i harmonogramem;
+- formularz potwierdzenia przybycia (RSVP);
+- FAQ i dane kontaktowe;
+- menu przyjęcia;
+- galeria zdjęć z folderu Google Drive.
 
-## Features
+## Wymagania
 
-- Placeholder text ready to replace
+- Node.js 20 lub nowszy;
+- npm.
 
-## Run locally
+## Uruchomienie lokalne
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Type check
+Domyślnie aplikacja będzie dostępna pod adresem `http://localhost:5173`.
+
+## Dostępne skrypty
+
+| Polecenie | Zastosowanie |
+| --- | --- |
+| `npm run dev` | Uruchamia serwer developerski React Router. |
+| `npm run typecheck` | Generuje typy tras i uruchamia sprawdzanie TypeScript. |
+| `npm run build` | Buduje wersję produkcyjną w katalogu `build`. |
+| `npm run start` | Uruchamia zbudowany serwer produkcyjny. |
+| `npm run deploy` | Buduje aplikację i wdraża ją przez Wrangler na Cloudflare Workers. |
+
+## Edycja treści
+
+Teksty wydarzenia, etykiety nawigacji, harmonogram, menu, FAQ i dane kontaktowe znajdują się w [app/lib/site-content.ts](app/lib/site-content.ts). Zdjęcia używane przez stronę należy umieścić w katalogu [public](public).
+
+Adresy stron:
+
+- `/` - strona główna;
+- `/faq` - najczęściej zadawane pytania;
+- `/rsvp` - potwierdzenie przybycia;
+- `/contact` - kontakt;
+- `/menu` - menu;
+- `/galeria` - galeria zdjęć.
+
+## Wdrożenie
+
+Konfiguracja Cloudflare znajduje się w [wrangler.jsonc](wrangler.jsonc). Po skonfigurowaniu dostępu do Cloudflare uruchom:
 
 ```bash
-npm run typecheck
+npm run deploy
 ```
+
+Skrypt buduje klienta i serwer, a następnie przekazuje wynik do Wrangler. Katalog statycznych plików produkcyjnych to `build/client`.
